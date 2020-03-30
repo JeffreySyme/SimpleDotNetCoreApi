@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="8.6.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleDotNetCoreApi.Commands\SimpleDotNetCoreApi.Commands.csproj" />
+    <ProjectReference Include="..\SimpleDotNetCoreApi.Data\SimpleDotNetCoreApi.Data.csproj" />
+    <ProjectReference Include="..\SimpleDotNetCoreApi.Queries\SimpleDotNetCoreApi.Queries.csproj" />
+    <ProjectReference Include="..\SimpleDotNetCoreApi.Shared\SimpleDotNetCoreApi.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>

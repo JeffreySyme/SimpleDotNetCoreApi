@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "syme",
+    "classifications": [ "Web", "WebApi" ], 
+    "name": "Simple Web Api",
+    "identity": "Simple.WebApi",         
+    "groupIdentity":"Simple.ProjectTemplates",
+    "shortName": "simplewebapi",
+    "tags": {
+      "language": "C#",
+      "type":"project"
+    },
+    "sourceName": "Simple.WebApiTemplate",
+    "preferNameDirectory": true
+  }

@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/SimpleDotNetCoreApi
+/.vscode
+/SimpleDotNetCoreApi.Api/bin/Debug/netcoreapp3.1
+/SimpleDotNetCoreApi.Api/obj
+/SimpleDotNetCoreApi.Commands/bin/Debug/netstandard2.0
+/SimpleDotNetCoreApi.Commands/obj
+/SimpleDotNetCoreApi.Data/bin/Debug/netstandard2.0
+/SimpleDotNetCoreApi.Data/obj
+/SimpleDotNetCoreApi.Queries/bin/Debug/netstandard2.0
+/SimpleDotNetCoreApi.Queries/obj
+/SimpleDotNetCoreApi.Shared/bin/Debug/netstandard2.0
+/SimpleDotNetCoreApi.Shared/obj
