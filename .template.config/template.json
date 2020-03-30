@@ -2,14 +2,14 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "syme",
     "classifications": [ "Web", "WebApi" ], 
-    "name": "Simple Web Api",
-    "identity": "Simple.WebApi",         
+    "name": "Simple DotNet Core Api",
+    "identity": "Simple.DotNetCoreApi",         
     "groupIdentity":"Simple.ProjectTemplates",
-    "shortName": "simplewebapi",
+    "shortName": "simpledotnetcoreapi",
     "tags": {
       "language": "C#",
       "type":"project"
     },
-    "sourceName": "Simple.WebApiTemplate",
+    "sourceName": "SimpleDotNetCoreApi",
     "preferNameDirectory": true
   }
