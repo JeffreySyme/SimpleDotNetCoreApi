@@ -1,30 +1,25 @@
 ﻿using System.Threading.Tasks;
-using FluentValidation;
-using FluentValidation.AspNetCore;
 using SimpleDotNetCoreApi.Queries.WeatherForecast;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace SimpleDotNetCoreApi.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : BaseController
     {
         private readonly IMediator _mediator;
-        private readonly IValidator<GetWeatherForecast.Query> _queryValidator;
-        public WeatherForecastController(IMediator mediator, IValidator<GetWeatherForecast.Query> queryValidator)
+        public WeatherForecastController(IMediator mediator, IServiceProvider serviceProvider) : base(serviceProvider)
         {
             _mediator = mediator;
-            _queryValidator = queryValidator;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetWeatherForecast.Query request) 
         {
-            var validationResult = await _queryValidator.ValidateAsync(request);
-
-            validationResult.AddToModelState(ModelState, null);
+            await ValidateReqeustAsync(request);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

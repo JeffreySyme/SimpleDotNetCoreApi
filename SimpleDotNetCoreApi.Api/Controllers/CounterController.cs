@@ -4,27 +4,24 @@ using SimpleDotNetCoreApi.Commands.Counter;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System;
 
 namespace SimpleDotNetCoreApi.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CounterController : ControllerBase
+    public class CounterController : BaseController
     {
         private readonly IMediator _mediator;
-        private readonly IValidator<IncrementCounter.Command> _incrementValidator;
-        public CounterController(IMediator mediator, IValidator<IncrementCounter.Command> incrementValidator)
+        public CounterController(IMediator mediator, IServiceProvider serviceProvider) : base(serviceProvider)
         {
             _mediator = mediator;
-            _incrementValidator = incrementValidator;
         }
 
         [HttpPost("increment")]
         public async Task<IActionResult> Increment([FromBody] IncrementCounter.Command request) 
         {
-            var validationResult = await _incrementValidator.ValidateAsync(request);
-
-            validationResult.AddToModelState(ModelState, null);
+            await ValidateReqeustAsync(request);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
